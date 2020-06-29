@@ -6,5 +6,5 @@ Feel free to fork this theme and create your own version.
 
 ## Preview of the theme
 
-Will be available soon.
+You can view a live demo of the theme here: [Demo](https://cabrare-theme.modularcms.io)
 
