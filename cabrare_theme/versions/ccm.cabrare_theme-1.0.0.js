@@ -15,15 +15,16 @@
         ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.js',
 
         config: {
-            "theme_helper": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_helper/versions/ccm.theme_helper.js" ]
+            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/html/theme.html" ],
+            "css": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/theme.css" ],
+            "theme_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_core/versions/ccm.theme_core-1.0.0.js" ],
+            // "layout": [...]
         },
 
         Instance: function () {
 
             this.start = async () => {
-
-                this.element.innerHTML = 'Hello, World!';
-
+                this.theme_core.initContent({});
             };
 
         }
