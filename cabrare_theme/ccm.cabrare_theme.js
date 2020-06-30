@@ -30,10 +30,8 @@
             };
 
             this.start = async () => {
-                this.theme_core.initContent({
-                    logoSrc: this.logo
-                }, {
-                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {}) : null
+                this.theme_core.initContent({}, {
+                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {logoSrc: this.logo}) : null
                 });
             };
 
