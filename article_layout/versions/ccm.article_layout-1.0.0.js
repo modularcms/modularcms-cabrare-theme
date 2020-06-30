@@ -15,6 +15,7 @@
         ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.js',
 
         config: {
+            "shadow": "open",
             "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/html/layout.html" ],
             "css": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/css/layout.css" ],
             "layout_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/layout_core/versions/ccm.layout_core-1.0.0.js" ],
