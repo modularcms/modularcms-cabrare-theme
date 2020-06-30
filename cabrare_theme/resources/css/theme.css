@@ -1,18 +1,6 @@
-* {
-    --color-primary: #1592e6;
-    --color-secondary: #1592e6;
-    --header-background-color: #fff;
-    --header-nav-color: #aaa;
-    --header-nav-color-active: var(--color-primary);
-    --footer-color: #eee;
-}
-
-.row {
-    max-width: 800px;
-    margin: 0 auto;
-    width: 100%;
-}
-
+/**
+ * header
+ */
 header {
     box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
     display: flex;
@@ -32,12 +20,18 @@ header #logo img {
     height: 50px;
 }
 
+/**
+ * navigation
+ */
 header nav {
     flex-grow: 1;
     --menu-color: var(--header-nav-color);
     --menu-color-active: var(--header-nav-color-active);
 }
 
+/**
+ * footer
+ */
 footer {
     padding: 10px;
     background-color: var(--footer-color);

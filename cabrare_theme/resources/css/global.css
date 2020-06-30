@@ -1,0 +1,32 @@
+/**
+ * Colors
+ */
+* {
+    --color-primary: #1592e6;
+    --color-secondary: #1592e6;
+    --header-background-color: #fff;
+    --header-nav-color: #aaa;
+    --header-nav-color-active: var(--color-primary);
+    --footer-color: #eee;
+}
+
+
+/**
+ * Font
+ */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+/**
+ * row
+ */
+
+.row {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}

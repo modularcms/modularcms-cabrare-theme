@@ -15,7 +15,10 @@
         config: {
             "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
             "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/html/theme.html" ],
-            "css": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/theme.css" ],
+            "css": ["ccm.load",
+                "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/global.css",
+                "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/theme.css",
+            ],
             "theme_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_core/versions/ccm.theme_core-1.0.0.js" ],
             // "layout": [...],
 
