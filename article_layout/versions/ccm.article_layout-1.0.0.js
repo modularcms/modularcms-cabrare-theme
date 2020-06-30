@@ -16,6 +16,7 @@
 
         config: {
             "shadow": "open",
+            "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
             "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/html/layout.html" ],
             "css": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/css/layout.css" ],
             "layout_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/layout_core/versions/ccm.layout_core-1.0.0.js" ],
@@ -23,6 +24,11 @@
         },
 
         Instance: function () {
+            let $;
+
+            this.ready = async () => {
+                $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
+            };
 
             this.start = async () => {
                 this.layout_core.initContent({});

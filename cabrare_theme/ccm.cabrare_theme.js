@@ -13,6 +13,7 @@
         ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.js',
 
         config: {
+            "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
             "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/html/theme.html" ],
             "css": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/theme.css" ],
             "theme_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_core/versions/ccm.theme_core-1.0.0.js" ],
@@ -22,6 +23,11 @@
         },
 
         Instance: function () {
+            let $;
+
+            this.ready = async () => {
+                $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
+            };
 
             this.start = async () => {
                 this.theme_core.initContent({
