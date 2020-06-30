@@ -25,7 +25,7 @@
         Instance: function () {
 
             this.start = async () => {
-                this.theme_core.initContent({});
+                this.layout_core.initContent({});
             };
 
         }

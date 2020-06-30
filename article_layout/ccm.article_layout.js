@@ -16,14 +16,13 @@
             "shadow": "open",
             "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/html/theme.html" ],
             "css": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/css/theme.css" ],
-            "layout_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/layout_core/versions/ccm.layout_core-1.0.0.js" ],
-            // "layout": [...]
+            "layout_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/layout_core/versions/ccm.layout_core-1.0.0.js" ]
         },
 
         Instance: function () {
 
             this.start = async () => {
-                this.theme_core.initContent({});
+                this.layout_core.initContent({});
             };
 
         }
