@@ -22,7 +22,8 @@
             "theme_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_core/versions/ccm.theme_core-1.0.0.js" ],
             // "layout": [...],
 
-            "logo": "https://modularcms.github.io/modularcms-cabrare-theme/img/default-logo.svg"
+            "logo": "https://modularcms.github.io/modularcms-cabrare-theme/img/default-logo.svg",
+            "logoTitle": "Cabrare theme by modularcms"
         },
 
         Instance: function () {
@@ -34,7 +35,10 @@
 
             this.start = async () => {
                 this.theme_core.initContent({}, {
-                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {logoSrc: this.logo}) : null
+                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
+                        logoSrc: this.logo,
+                        logoTitle: this.logoTitle
+                    }) : null
                 });
             };
 
