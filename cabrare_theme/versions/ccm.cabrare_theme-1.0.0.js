@@ -18,13 +18,19 @@
             "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/html/theme.html" ],
             "css": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/theme.css" ],
             "theme_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_core/versions/ccm.theme_core-1.0.0.js" ],
-            // "layout": [...]
+            // "layout": [...],
+
+            "logo": "https://modularcms.github.io/modularcms-cabrare-theme/img/default-logo.svg"
         },
 
         Instance: function () {
 
             this.start = async () => {
-                this.theme_core.initContent({});
+                this.theme_core.initContent({
+                    logoSrc: this.logo
+                }, {
+                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {}) : null
+                });
             };
 
         }

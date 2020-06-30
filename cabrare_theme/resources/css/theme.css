@@ -1,0 +1,27 @@
+.row {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+header {
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+    display: flex;
+    width: 100%;
+}
+
+header .row {
+    padding: 10px;
+}
+
+header #logo {
+    flex-grow: 0;
+}
+
+header #logo img {
+    height: 50px;
+}
+
+header nav {
+    flex-grow: 1;
+}
