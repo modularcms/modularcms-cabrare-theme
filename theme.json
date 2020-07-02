@@ -1,1 +1,38 @@
-{"name":"Cabrare","ccmComponent":{"url":"https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/versions/ccm.cabrare_theme-1.0.0.js","config":{}},"custom":null,"layouts":[{"name":"Article","ccmComponent":{"url":"https://modularcms.github.io/modularcms-cabrare-theme/article_layout/versions/ccm.article_layout-1.0.0.js","config":{}},"custom":null,"type":"layout"},{"name":"Articles list","ccmComponent":{"url":"https://modularcms.github.io/modularcms-cabrare-theme/articles_list_layout/versions/articles_list_layout-1.0.0.js","config":{}},"custom":null,"type":"layout"},{"name":"Landing page","ccmComponent":{"url":"https://modularcms.github.io/modularcms-cabrare-theme/landing_page_layout/versions/landing_page_layout-1.0.0.js","config":{}},"custom":null,"type":"layout"}],"type":"theme"}
+{
+  "name": "Cabrare",
+  "ccmComponent": {
+    "url": "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/versions/ccm.cabrare_theme-1.0.0.js",
+    "config": {}
+  },
+  "custom": null,
+  "themeDefinitions": [
+    {
+      "name": "Article",
+      "ccmComponent": {
+        "url": "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/versions/ccm.article_layout-1.0.0.js",
+        "config": {}
+      },
+      "custom": null,
+      "type": "layout"
+    },
+    {
+      "name": "Articles list",
+      "ccmComponent": {
+        "url": "https://modularcms.github.io/modularcms-cabrare-theme/articles_list_layout/versions/articles_list_layout-1.0.0.js",
+        "config": {}
+      },
+      "custom": null,
+      "type": "layout"
+    },
+    {
+      "name": "Landing page",
+      "ccmComponent": {
+        "url": "https://modularcms.github.io/modularcms-cabrare-theme/landing_page_layout/versions/landing_page_layout-1.0.0.js",
+        "config": {}
+      },
+      "custom": null,
+      "type": "layout"
+    }
+  ],
+  "type": "theme"
+}

@@ -21,7 +21,7 @@
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/global.css",
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/theme.css",
             ],
-            "theme_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_core/versions/ccm.theme_core-1.0.0.js" ],
+            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ],
             // "layout": [...],
 
             "logo": "https://modularcms.github.io/modularcms-cabrare-theme/img/default-logo.svg",
@@ -36,7 +36,7 @@
             };
 
             this.start = async () => {
-                this.theme_core.initContent({}, {
+                this.core.initContent({}, {
                     'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
                         logoSrc: this.logo,
                         logoTitle: this.logoTitle

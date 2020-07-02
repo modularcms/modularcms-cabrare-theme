@@ -21,7 +21,7 @@
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/global.css",
                 "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/css/layout.css"
             ],
-            "layout_core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/layout_core/versions/ccm.layout_core-1.0.0.js" ],
+            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ],
             // "layout": [...]
         },
 
@@ -33,7 +33,7 @@
             };
 
             this.start = async () => {
-                this.layout_core.initContent({});
+                this.core.initContent({});
             };
 
         }
