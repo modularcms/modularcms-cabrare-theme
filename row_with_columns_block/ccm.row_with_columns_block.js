@@ -1,5 +1,5 @@
 /**
- * @overview ccm component for "cabrare" theme
+ * @overview ccm component for the article layout
  * @author Felix Bröhl <broehl@everoo.io> 2020
  * @license The MIT License (MIT)
  */
@@ -8,22 +8,18 @@
 
     const component = {
 
-        name: 'cabrare_theme',
-
-        version: [1,0,0],
+        name: 'row_with_columns_block',
 
         ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.js',
 
         config: {
             "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
-            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/html/template.html" ],
+            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/row_with_columns_block/resources/html/template.html" ],
             "css": ["ccm.load",
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/global.css",
-                "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/style.css",
+                "https://modularcms.github.io/modularcms-cabrare-theme/row_with_columns_block/resources/css/style.css"
             ],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ],
-            "logo": "https://modularcms.github.io/modularcms-cabrare-theme/img/default-logo.svg",
-            "logoTitle": "Cabrare theme by modularcms"
         },
 
         Instance: function () {
@@ -34,12 +30,7 @@
             };
 
             this.start = async () => {
-                this.core.initContent({}, {
-                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
-                        logoSrc: this.logo,
-                        logoTitle: this.logoTitle
-                    }) : null
-                });
+                this.core.initContent({});
             };
 
         }

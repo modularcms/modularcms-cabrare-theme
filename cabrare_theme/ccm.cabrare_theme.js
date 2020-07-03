@@ -14,14 +14,12 @@
 
         config: {
             "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
-            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/html/theme.html" ],
+            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/html/template.html" ],
             "css": ["ccm.load",
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/global.css",
-                "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/theme.css",
+                "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/style.css",
             ],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ],
-            // "layout": [...],
-
             "logo": "https://modularcms.github.io/modularcms-cabrare-theme/img/default-logo.svg",
             "logoTitle": "Cabrare theme by modularcms"
         },

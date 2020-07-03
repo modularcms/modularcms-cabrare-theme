@@ -32,6 +32,15 @@
       },
       "custom": null,
       "type": "layout"
+    },
+    {
+      "name": "Row with columns",
+      "ccmComponent": {
+        "url": "https://modularcms.github.io/modularcms-cabrare-theme/row_with_columns_block/versions/ccm.row_with_columns_block-1.0.0.js",
+        "config": {}
+      },
+      "custom": null,
+      "type": "block"
     }
   ],
   "type": "theme"

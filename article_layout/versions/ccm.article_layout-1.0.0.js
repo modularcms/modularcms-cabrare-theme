@@ -16,13 +16,12 @@
 
         config: {
             "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
-            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/html/layout.html" ],
+            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/html/template.html" ],
             "css": ["ccm.load",
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/global.css",
-                "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/css/layout.css"
+                "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/css/style.css"
             ],
-            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ],
-            // "layout": [...]
+            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ]
         },
 
         Instance: function () {
