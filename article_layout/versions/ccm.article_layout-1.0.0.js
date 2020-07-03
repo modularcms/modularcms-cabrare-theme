@@ -32,7 +32,7 @@
             };
 
             this.start = async () => {
-                this.core.initContent({});
+                this.core.initContent(this.html.main);
             };
 
         }

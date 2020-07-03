@@ -32,7 +32,15 @@
             };
 
             this.start = async () => {
-                this.core.initContent({});
+                let html = this.html.oneColumn;
+                if (this.columns == 2) {
+                    html = this.html.twoColumns;
+                } else if (this.columns == 3) {
+                    html = this.html.threeColumns;
+                } else if (this.columns == 4) {
+                    html = this.html.fourColumns;
+                }
+                this.core.initContent(html);
             };
 
         }
