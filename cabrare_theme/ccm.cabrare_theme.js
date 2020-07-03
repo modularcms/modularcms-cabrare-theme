@@ -20,7 +20,7 @@
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/style.css",
             ],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ],
-            "logo": "https://modularcms.github.io/modularcms-cabrare-theme/img/default-logo.svg",
+            "logo": "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/img/default-logo.svg",
             "logoTitle": "Cabrare theme by modularcms"
         },
 
