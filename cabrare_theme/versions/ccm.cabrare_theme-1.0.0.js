@@ -36,10 +36,8 @@
             };
 
             this.start = async () => {
-                await this.menu.start({
-                    websiteKey: this.websiteKey,
-                    page: this.page
-                });
+                this.menu.websiteKey = this.websiteKey;
+                await this.menu.start();
                 await this.core.initContent(this.html.main, {}, {
                     'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
                         logoSrc: this.logo,
