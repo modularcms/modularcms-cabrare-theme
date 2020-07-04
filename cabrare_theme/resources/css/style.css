@@ -20,6 +20,14 @@ header #logo img {
     height: 50px;
 }
 
+#header-inner-wrapper {
+    display: flex;
+}
+
+#menu-wrapper {
+    overflow: auto;
+}
+
 /**
  * navigation
  */

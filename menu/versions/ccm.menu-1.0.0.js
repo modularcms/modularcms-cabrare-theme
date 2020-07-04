@@ -41,7 +41,7 @@
                     menuItems.push({
                         text: page.title,
                         route: startPageUrl + page.urlPart
-                    })
+                    });
                 }
                 addMenuPage(startPage);
                 startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, startPage.pageKey);
@@ -51,7 +51,11 @@
                 }
                 $.setContent(this.element, $.html(this.html.main, {}));
                 for (let item of menuItems) {
-                    $.append(this.element.querySelector('#menu-item-container'), $.html(this.html.menuItem, item));
+                    let itemElement = $.html(this.html.menuItem, item);
+                    if (item.route == window.location.pathname) {
+                        itemElement.classList.add('active');
+                    }
+                    $.append(this.element.querySelector('#menu-item-container'), itemElement);
                 }
             };
 
