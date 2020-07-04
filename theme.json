@@ -25,9 +25,9 @@
       "type": "layout"
     },
     {
-      "name": "Landing page",
+      "name": "Plain",
       "ccmComponent": {
-        "url": "https://modularcms.github.io/modularcms-cabrare-theme/landing_page_layout/versions/landing_page_layout-1.0.0.js",
+        "url": "https://modularcms.github.io/modularcms-cabrare-theme/plain_layout/versions/plain_layout-1.0.0.js",
         "config": {}
       },
       "custom": null,
