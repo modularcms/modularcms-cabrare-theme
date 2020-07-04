@@ -4,9 +4,11 @@
 * {
     --color-primary: #1592e6;
     --color-secondary: #1592e6;
+    --color-light: #fff;
     --header-background-color: #fff;
     --header-nav-color: #aaa;
     --header-nav-color-active: var(--color-primary);
+    --header-nav-mobile-background-color: var(--color-light);
     --footer-color: #eee;
 }
 

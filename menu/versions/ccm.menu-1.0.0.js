@@ -57,6 +57,17 @@
                     }
                     $.append(this.element.querySelector('#menu-item-container'), itemElement);
                 }
+
+                // hamburger button
+                hamburger.onclick = () => {
+                    if (hamburger.classList.contains('active')) {
+                        menu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    } else {
+                        menu.classList.add('active');
+                        hamburger.classList.add('active');
+                    }
+                };
             };
 
         }
