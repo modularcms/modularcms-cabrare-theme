@@ -28,6 +28,10 @@ header #logo img {
     overflow: auto;
 }
 
+#menu-wrapper > div {
+    height: 100%;
+}
+
 /**
  * navigation
  */

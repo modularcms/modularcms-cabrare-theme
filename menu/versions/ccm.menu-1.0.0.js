@@ -52,7 +52,7 @@
                 $.setContent(this.element, $.html(this.html.main, {}));
                 for (let item of menuItems) {
                     let itemElement = $.html(this.html.menuItem, item);
-                    if (item.route == window.location.pathname) {
+                    if (item.route == window.location.pathname) { // TODO base url
                         itemElement.classList.add('active');
                     }
                     $.append(this.element.querySelector('#menu-item-container'), itemElement);
