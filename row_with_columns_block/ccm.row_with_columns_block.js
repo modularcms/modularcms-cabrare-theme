@@ -38,7 +38,7 @@
                 } else if (this.columns == 4) {
                     html = this.html.fourColumns;
                 }
-                this.core.initContent(html);
+                await this.core.initContent(html);
             };
 
         }

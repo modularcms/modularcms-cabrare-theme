@@ -32,7 +32,7 @@
             };
 
             this.start = async () => {
-                this.core.initContent(this.html.main, {}, {
+                await this.core.initContent(this.html.main, {}, {
                     'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
                         logoSrc: this.logo,
                         logoTitle: this.logoTitle

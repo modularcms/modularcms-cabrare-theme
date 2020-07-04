@@ -30,7 +30,7 @@
             };
 
             this.start = async () => {
-                this.core.initContent(this.html.main);
+                await this.core.initContent(this.html.main);
             };
 
         }
