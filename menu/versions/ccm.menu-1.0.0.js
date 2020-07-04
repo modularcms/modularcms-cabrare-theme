@@ -44,8 +44,8 @@
                     })
                 }
                 addMenuPage(startPage);
-                startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.startPage.pageKey);
-                const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, this.startPage.pageKey);
+                startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, startPage.pageKey);
+                const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, startPage.pageKey);
                 for (let pageChild of pageChildren) {
                     addMenuPage(pageChild);
                 }
