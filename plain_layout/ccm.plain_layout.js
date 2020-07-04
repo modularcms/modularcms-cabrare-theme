@@ -14,7 +14,7 @@
 
         config: {
             "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
-            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/html/template.html" ],
+            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/plain_layout/resources/html/template.html" ],
             "css": ["ccm.load",
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/global.css",
                 "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/css/style.css"
