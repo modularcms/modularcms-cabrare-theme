@@ -34,7 +34,7 @@
             };
 
             this.start = async () => {
-                const startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPage);
+                const startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPage, true);
                 let startPageUrl = '';
                 let menuItems = [];
                 const addMenuPage = (page) => {
