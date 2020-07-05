@@ -18,7 +18,7 @@
     {
       "name": "Articles list",
       "ccmComponent": {
-        "url": "https://modularcms.github.io/modularcms-cabrare-theme/articles_list_layout/versions/articles_list_layout-1.0.0.js",
+        "url": "https://modularcms.github.io/modularcms-cabrare-theme/articles_list_layout/versions/ccm.articles_list_layout-1.0.0.js",
         "config": {}
       },
       "custom": null,
