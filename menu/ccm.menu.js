@@ -28,49 +28,63 @@
         Instance: function () {
             let $;
 
+            let _menuItems = [];
+            let _startPage = null;
+            let _startPageUrl = '';
+
             this.ready = async () => {
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
             };
 
             this.start = async () => {
+                this.initMenuItems();
                 const currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
-                const startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, this.live);
-                const startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, startPage.pageKey);
-                let menuItems = [];
-                const addMenuPage = (page) => {
-                    menuItems.push({
-                        text: page.title,
-                        route: (startPageUrl == '/' ? '' : startPageUrl) + page.urlPart
-                    });
+
+                if (!this.element.querySelector('#menu-item-container')) {
+                    $.setContent(this.element, $.html(this.html.main, {}));
+
+                    // hamburger button
+                    const menu = this.element.querySelector('nav');
+                    const hamburger = this.element.querySelector('#hamburger-button');
+                    hamburger.onclick = () => {
+                        if (hamburger.classList.contains('active')) {
+                            menu.classList.remove('active');
+                            hamburger.classList.remove('active');
+                        } else {
+                            menu.classList.add('active');
+                            hamburger.classList.add('active');
+                        }
+                    };
                 }
-                addMenuPage(startPage);
-                const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, startPage.pageKey);
-                for (let pageChild of pageChildren) {
-                    addMenuPage(pageChild);
-                }
-                $.setContent(this.element, $.html(this.html.main, {}));
-                for (let item of menuItems) {
+
+                this.element.querySelector('#menu-item-container').innerHTML = '';
+                for (let item of _menuItems) {
                     let itemElement = $.html(this.html.menuItem, item);
                     if (item.route == currentPageUrl) { // TODO base url
                         itemElement.classList.add('active');
                     }
                     $.append(this.element.querySelector('#menu-item-container'), itemElement);
                 }
-
-                // hamburger button
-                const menu = this.element.querySelector('nav');
-                const hamburger = this.element.querySelector('#hamburger-button');
-                hamburger.onclick = () => {
-                    if (hamburger.classList.contains('active')) {
-                        menu.classList.remove('active');
-                        hamburger.classList.remove('active');
-                    } else {
-                        menu.classList.add('active');
-                        hamburger.classList.add('active');
-                    }
-                };
             };
 
+            this.initMenuItems = async () => {
+                if (_menuItems.length == 0) {
+                    _startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, this.live);
+                    _startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, startPage.pageKey);
+                    this.addMenuPage(_startPage);
+                    const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, startPage.pageKey);
+                    for (let pageChild of pageChildren) {
+                        this.addMenuPage(pageChild);
+                    }
+                }
+            };
+
+            this.addMenuPage = (page) => {
+                _menuItems.push({
+                    text: page.title,
+                    route: (_startPageUrl == '/' ? '' : _startPageUrl) + page.urlPart
+                });
+            };
         }
 
     };
