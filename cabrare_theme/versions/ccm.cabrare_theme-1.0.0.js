@@ -37,6 +37,7 @@
 
             this.start = async () => {
                 this.menu.websiteKey = this.websiteKey;
+                this.menu.page = this.page;
                 await this.menu.start();
                 await this.core.initContent(this.html.main, {}, {
                     'logo-wrapper': this.logo != null ? $.html(this.html.logo, {

@@ -21,7 +21,7 @@
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "data_controller": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/data_controller/versions/ccm.data_controller-1.0.0.js" ],
-            "entryPage": "/",
+            "entryPageUrl": "/",
             "live": true
         },
 
@@ -33,7 +33,8 @@
             };
 
             this.start = async () => {
-                const startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPage, this.live);
+                const currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page);
+                const startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, this.live);
                 let startPageUrl = '';
                 let menuItems = [];
                 const addMenuPage = (page) => {
@@ -51,13 +52,14 @@
                 $.setContent(this.element, $.html(this.html.main, {}));
                 for (let item of menuItems) {
                     let itemElement = $.html(this.html.menuItem, item);
-                    if (item.route == window.location.pathname) { // TODO base url
+                    if (item.route == currentPageUrl) { // TODO base url
                         itemElement.classList.add('active');
                     }
                     $.append(this.element.querySelector('#menu-item-container'), itemElement);
                 }
 
                 // hamburger button
+                const menu = this.element.querySelector('nav');
                 const hamburger = this.element.querySelector('#hamburger-button');
                 hamburger.onclick = () => {
                     if (hamburger.classList.contains('active')) {
