@@ -1,4 +1,4 @@
-#element, nav {
+#element, nav, #element > div {
     height: 100%;
 }
 
