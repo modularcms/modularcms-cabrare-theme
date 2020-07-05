@@ -37,7 +37,7 @@
             };
 
             this.start = async () => {
-                this.initMenuItems();
+                await this.initMenuItems();
                 const currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
 
                 if (!this.element.querySelector('#menu-item-container')) {
