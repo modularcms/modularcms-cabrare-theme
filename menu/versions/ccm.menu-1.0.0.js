@@ -37,16 +37,15 @@
             this.start = async () => {
                 const currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
                 const startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, this.live);
-                let startPageUrl = '';
+                const startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, startPage.pageKey);
                 let menuItems = [];
                 const addMenuPage = (page) => {
                     menuItems.push({
                         text: page.title,
-                        route: startPageUrl + page.urlPart
+                        route: (startPageUrl == '/' ? '' : startPageUrl) + page.urlPart
                     });
                 }
                 addMenuPage(startPage);
-                startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, startPage.pageKey);
                 const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, startPage.pageKey);
                 for (let pageChild of pageChildren) {
                     addMenuPage(pageChild);
