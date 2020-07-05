@@ -21,6 +21,10 @@
             this.start = async () => {
                 await this.core.initContent(this.html.main);
             };
+
+            this.update = async () => {
+                console.log('update needed');
+            }
         }
 
     };
