@@ -70,9 +70,9 @@
             this.initMenuItems = async () => {
                 if (_menuItems.length == 0) {
                     _startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, this.live);
-                    _startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, startPage.pageKey);
+                    _startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, _startPage.pageKey);
                     this.addMenuPage(_startPage);
-                    const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, startPage.pageKey);
+                    const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, _startPage.pageKey);
                     for (let pageChild of pageChildren) {
                         this.addMenuPage(pageChild);
                     }
