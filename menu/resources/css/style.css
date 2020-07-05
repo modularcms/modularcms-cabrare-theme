@@ -27,11 +27,12 @@ ul li.active a:link, ul li.active a:hover, ul li.active a:visited {
 #hamburger-button {
     display: none;
     position: absolute;
-    top: 4.5px;
+    top: calc(50% - 10px);
     right: 0px;
     width: 25px;
     height: 21px;
     margin: 10px;
+    transform: translateY(-50%);
 }
 
 #hamburger-button .inner, #hamburger-button:before, #hamburger-button:after {

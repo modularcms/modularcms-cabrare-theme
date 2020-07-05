@@ -26,6 +26,8 @@ header #logo img {
 
 #menu-wrapper {
     overflow: auto;
+    width: 100%;
+    position: relative;
 }
 
 #menu-wrapper > div {
