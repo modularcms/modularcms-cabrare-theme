@@ -21,7 +21,8 @@
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "data_controller": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/data_controller/versions/ccm.data_controller-1.0.0.js" ],
-            "entryPage": "/"
+            "entryPage": "/",
+            "live": true
         },
 
         Instance: function () {
@@ -32,7 +33,7 @@
             };
 
             this.start = async () => {
-                const startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPage, true);
+                const startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPage, this.live);
                 let startPageUrl = '';
                 let menuItems = [];
                 const addMenuPage = (page) => {
@@ -57,6 +58,7 @@
                 }
 
                 // hamburger button
+                const hamburger = this.element.querySelector('#hamburger-button');
                 hamburger.onclick = () => {
                     if (hamburger.classList.contains('active')) {
                         menu.classList.remove('active');
