@@ -60,6 +60,7 @@
                 }
 
                 // hamburger button
+                const menu = this.element.querySelector('nav');
                 const hamburger = this.element.querySelector('#hamburger-button');
                 hamburger.onclick = () => {
                     if (hamburger.classList.contains('active')) {

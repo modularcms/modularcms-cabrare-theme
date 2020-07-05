@@ -9,6 +9,7 @@
     --header-nav-color: #aaa;
     --header-nav-color-active: var(--color-primary);
     --header-nav-mobile-background-color: var(--color-light);
+    --header-nav-hamburger-button-color: var(--color-primary);
     --footer-color: #eee;
 }
 
