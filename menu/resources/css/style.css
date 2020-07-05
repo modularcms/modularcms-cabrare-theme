@@ -24,6 +24,11 @@ ul li.active a:link, ul li.active a:hover, ul li.active a:visited {
     color: var(--header-nav-color-active);
 }
 
+#hamburger-wrapper {
+    position: relative;
+    height: 100%;
+}
+
 #hamburger-button {
     display: none;
     position: absolute;
@@ -112,7 +117,13 @@ ul li.active a:link, ul li.active a:hover, ul li.active a:visited {
     }
 
     nav.active {
-        max-height: calc(100vh - 50px);
+        margin-top: 25px;
+        max-height: calc(100vh - 75px);
+    }
+
+    nav + div {
+        position: relative;
+        height: 100%;
     }
 
     #hamburger-button {
