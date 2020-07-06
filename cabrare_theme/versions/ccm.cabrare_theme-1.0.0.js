@@ -31,7 +31,7 @@
         Instance: function () {
             let $;
 
-            let menuInitiated = false;
+            let _menuInitiated = false;
 
             this.ready = async () => {
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
@@ -42,8 +42,8 @@
                 this.menu.page = this.page;
                 this.menu.edit = this.edit;
 
-                if (!menuInitiated) {
-                    menuInitiated = true;
+                if (!_menuInitiated) {
+                    _menuInitiated = true;
                     await this.menu.start();
                     await this.core.initContent(this.html.main, {}, {
                         'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
