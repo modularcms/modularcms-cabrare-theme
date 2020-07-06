@@ -39,7 +39,6 @@
 
             this.start = async () => {
                 await this.initMenuItems();
-                _currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
                 $.setContent(this.element, $.html(this.html.main, {}));
 
                 // hamburger button
@@ -59,10 +58,11 @@
             };
 
             this.update = async () => {
+                _currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
                 this.element.querySelector('#menu-item-container').innerHTML = '';
                 for (let item of _menuItems) {
                     let itemElement = $.html(this.html.menuItem, item);
-                    if (item.route == currentPageUrl) { // TODO base url
+                    if (item.route == _currentPageUrl) { // TODO base url
                         itemElement.classList.add('active');
                     }
                     $.append(this.element.querySelector('#menu-item-container'), itemElement);
@@ -70,14 +70,12 @@
             };
 
             this.initMenuItems = async () => {
-                if (_menuItems.length == 0) {
-                    _startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, !this.edit);
-                    _startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, _startPage.pageKey);
-                    this.addMenuPage(_startPage);
-                    const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, _startPage.pageKey);
-                    for (let pageChild of pageChildren) {
-                        this.addMenuPage(pageChild);
-                    }
+                _startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, !this.edit);
+                _startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, _startPage.pageKey);
+                this.addMenuPage(_startPage);
+                const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, _startPage.pageKey);
+                for (let pageChild of pageChildren) {
+                    this.addMenuPage(pageChild);
                 }
             };
 
