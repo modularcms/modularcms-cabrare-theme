@@ -29,6 +29,8 @@
         Instance: function () {
             let $;
 
+            let menuInitiated = false;
+
             this.ready = async () => {
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
             };
@@ -37,14 +39,19 @@
                 this.menu.websiteKey = this.websiteKey;
                 this.menu.page = this.page;
                 this.menu.edit = this.edit;
-                await this.menu.start();
-                await this.core.initContent(this.html.main, {}, {
-                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
-                        logoSrc: this.logo,
-                        logoTitle: this.logoTitle
-                    }) : null,
-                    'menu-wrapper': this.menu.root
-                });
+
+                if (!menuInitiated) {
+                    await this.menu.start();
+                    await this.core.initContent(this.html.main, {}, {
+                        'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
+                            logoSrc: this.logo,
+                            logoTitle: this.logoTitle
+                        }) : null,
+                        'menu-wrapper': this.menu.root
+                    });
+                } else {
+                    await this.menu.update();
+                }
             };
         }
 
