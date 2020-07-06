@@ -31,10 +31,10 @@
             };
 
             this.start = async () => {
-                await this.rerender();
+                await this.update();
             };
 
-            this.rerender = async () => {
+            this.update = async () => {
                 await this.core.initContent(this.html.main);
             };
 

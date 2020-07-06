@@ -39,8 +39,11 @@
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
             };
 
-            this.start = async () => {
+            this.init = async () => {
                 await this.initMenuItems();
+            }
+
+            this.start = async () => {
                 $.setContent(this.element, $.html(this.html.main, {}));
 
                 // hamburger button
@@ -56,10 +59,10 @@
                     }
                 };
 
-                await this.rerender();
+                await this.update();
             };
 
-            this.rerender = async () => {
+            this.update = async () => {
                 _currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
                 this.element.querySelector('#menu-item-container').innerHTML = '';
                 for (let item of _menuItems) {

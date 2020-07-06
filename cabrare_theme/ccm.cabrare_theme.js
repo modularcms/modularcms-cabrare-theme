@@ -38,10 +38,10 @@
             };
 
             this.start = async () => {
-                await this.rerender();
+                await this.update();
             };
 
-            this.rerender = async () => {
+            this.update = async () => {
                 this.menu.websiteKey = this.websiteKey;
                 this.menu.page = this.page;
                 this.menu.edit = this.edit;
