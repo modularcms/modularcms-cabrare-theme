@@ -46,10 +46,6 @@
                 });
             };
 
-            this.update = async () => {
-                console.log('update needed');
-            }
-
         }
 
     };

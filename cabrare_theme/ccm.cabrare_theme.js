@@ -46,11 +46,6 @@
                     'menu-wrapper': this.menu.root
                 });
             };
-
-            this.update = async () => {
-                console.log('update needed');
-            }
-
         }
 
     };
