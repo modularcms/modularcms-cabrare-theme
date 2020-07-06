@@ -37,11 +37,9 @@
 
             this.ready = async () => {
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
-            };
 
-            this.init = async () => {
                 await this.initMenuItems();
-            }
+            };
 
             this.start = async () => {
                 $.setContent(this.element, $.html(this.html.main, {}));
