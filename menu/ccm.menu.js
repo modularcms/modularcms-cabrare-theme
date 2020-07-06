@@ -35,11 +35,11 @@
 
             this.ready = async () => {
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
-
-                await this.initMenuItems();
             };
 
             this.start = async () => {
+                await this.initMenuItems();
+
                 $.setContent(this.element, $.html(this.html.main, {}));
 
                 // hamburger button
