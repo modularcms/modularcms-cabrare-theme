@@ -54,10 +54,10 @@
                     }
                 };
 
-                await this.update();
+                await this.rerender();
             };
 
-            this.update = async () => {
+            this.rerender = async () => {
                 _currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
                 this.element.querySelector('#menu-item-container').innerHTML = '';
                 for (let item of _menuItems) {

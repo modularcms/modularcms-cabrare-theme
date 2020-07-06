@@ -21,10 +21,10 @@
 
         Instance: function () {
             this.start = async () => {
-                await this.update();
+                await this.rerender();
             };
 
-            this.update = async () => {
+            this.rerender = async () => {
                 await this.core.initContent(this.html.main);
             };
         }

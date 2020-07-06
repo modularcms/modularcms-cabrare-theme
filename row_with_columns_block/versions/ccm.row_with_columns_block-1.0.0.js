@@ -36,10 +36,10 @@
             };
 
             this.start = async () => {
-                await this.update();
+                await this.rerender();
             };
 
-            this.update = async () => {
+            this.rerender = async () => {
                 let columnsDiv = document.createElement('div');
                 for (let i = 0; i < Math.min(this.columns, maxColumns); i++) {
                     $.append(columnsDiv, $.html(this.html.column, {
