@@ -22,7 +22,7 @@
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "data_controller": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/data_controller/versions/ccm.data_controller-1.0.0.js" ],
             "entryPageUrl": "/",
-            "live": true
+            "edit": false
         },
 
         Instance: function () {
@@ -69,7 +69,7 @@
 
             this.initMenuItems = async () => {
                 if (_menuItems.length == 0) {
-                    _startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, this.live);
+                    _startPage = await this.data_controller.getPageByUrl(this.websiteKey, this.entryPageUrl, !this.edit);
                     _startPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, _startPage.pageKey);
                     this.addMenuPage(_startPage);
                     const pageChildren = await this.data_controller.getPageChildren(this.websiteKey, _startPage.pageKey);
