@@ -33,6 +33,10 @@
             };
 
             this.start = async () => {
+                await this.update();
+            };
+
+            this.update = async () => {
                 await this.core.initContent(this.html.main);
             };
 

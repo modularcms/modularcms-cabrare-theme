@@ -37,6 +37,10 @@
             };
 
             this.start = async () => {
+                await this.update();
+            };
+
+            this.update = async () => {
                 await this.initMenuItems();
                 const currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
 

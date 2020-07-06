@@ -38,6 +38,10 @@
             };
 
             this.start = async () => {
+                await this.update();
+            };
+
+            this.update = async () => {
                 this.menu.websiteKey = this.websiteKey;
                 this.menu.page = this.page;
                 this.menu.edit = this.edit;
