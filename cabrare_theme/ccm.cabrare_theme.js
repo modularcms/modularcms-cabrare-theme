@@ -10,8 +10,6 @@
 
         name: 'cabrare_theme',
 
-        version: [1,0,0],
-
         ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.js',
 
         config: {
@@ -58,6 +56,10 @@
                     });
                 } else {
                     await this.menu.update();
+                }
+
+                if (this.edit) {
+                    this.element.querySelector('header').style.pointerEvents = 'none';
                 }
             };
         }
