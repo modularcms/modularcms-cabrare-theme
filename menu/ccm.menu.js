@@ -31,36 +31,34 @@
             let _menuItems = [];
             let _startPage = null;
             let _startPageUrl = '';
+            let _currentPageUrl = '';
 
             this.ready = async () => {
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
             };
 
             this.start = async () => {
+                await this.initMenuItems();
+                _currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
+                $.setContent(this.element, $.html(this.html.main, {}));
+
+                // hamburger button
+                const menu = this.element.querySelector('nav');
+                const hamburger = this.element.querySelector('#hamburger-button');
+                hamburger.onclick = () => {
+                    if (hamburger.classList.contains('active')) {
+                        menu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    } else {
+                        menu.classList.add('active');
+                        hamburger.classList.add('active');
+                    }
+                };
+
                 await this.update();
             };
 
             this.update = async () => {
-                await this.initMenuItems();
-                const currentPageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
-
-                if (!this.element.querySelector('#menu-item-container')) {
-                    $.setContent(this.element, $.html(this.html.main, {}));
-
-                    // hamburger button
-                    const menu = this.element.querySelector('nav');
-                    const hamburger = this.element.querySelector('#hamburger-button');
-                    hamburger.onclick = () => {
-                        if (hamburger.classList.contains('active')) {
-                            menu.classList.remove('active');
-                            hamburger.classList.remove('active');
-                        } else {
-                            menu.classList.add('active');
-                            hamburger.classList.add('active');
-                        }
-                    };
-                }
-
                 this.element.querySelector('#menu-item-container').innerHTML = '';
                 for (let item of _menuItems) {
                     let itemElement = $.html(this.html.menuItem, item);
