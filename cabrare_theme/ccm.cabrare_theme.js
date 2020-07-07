@@ -57,10 +57,6 @@
                 } else {
                     await this.menu.update();
                 }
-
-                if (this.edit) {
-                    this.element.querySelector('header').style.pointerEvents = 'none';
-                }
             };
         }
 
