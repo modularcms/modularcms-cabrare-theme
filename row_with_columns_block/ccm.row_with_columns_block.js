@@ -39,11 +39,14 @@
 
             this.update = async () => {
                 let columnsDiv = document.createElement('div');
-                for (let i = 0; i < Math.min(this.columns, maxColumns); i++) {
+                let columnsCount = Math.min(this.columns, maxColumns);
+                for (let i = 0; i < columnsCount; i++) {
                     $.append(columnsDiv, $.html(this.html.column, {
                         id: i+1
                     }));
                 }
+
+                this.element.setAttribute('data-columns-count', columnsCount);
 
                 await this.core.initContent(this.html.main, {}, {
                     'columns-container': columnsDiv
