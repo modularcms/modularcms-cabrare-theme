@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.column {
+    flex-grow: 1;
+}
+
 @media (min-width: 700px) {
     .row > div .column:nth-child(n+2) {
         margin-left: 20px;
