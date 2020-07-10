@@ -6,14 +6,14 @@
     flex-grow: 1;
 }
 
-@media (min-width: 700px) {
-    .row > div .column:nth-child(n+2) {
-        margin-left: 20px;
-    }
+#element.LG .row > div .column:nth-child(n+2) {
+    margin-left: 20px;
 }
 
-@media (max-width: 699px) {
-    .row > div {
-        flex-direction: column;
-    }
+#element:not(.LG) .row > div {
+    flex-direction: column;
+}
+
+#element:not(.LG) .column {
+    width: 100%
 }
