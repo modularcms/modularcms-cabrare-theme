@@ -33,11 +33,7 @@
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
             };
 
-            this.start = async () => {
-                await this.update();
-            };
-
-            this.update = async () => {
+            this.getColumnsDiv = () => {
                 let columnsDiv = document.createElement('div');
                 let columnsCount = Math.min(this.columns, maxColumns);
                 for (let i = 0; i < columnsCount; i++) {
@@ -45,10 +41,31 @@
                         id: i+1
                     }));
                 }
+                return columnsDiv
+            }
 
+            this.start = async () => {
+                let columnsDiv = this.getColumnsDiv();
+                let columnsCount = columnsDiv.children.length;
                 this.core.initContent(this.html.main, {columnsCount: columnsCount}, {
                     'columns-container': columnsDiv
                 });
+            };
+
+            this.update = (key, value) => {
+                this[key] = value;
+            };
+
+            this.updateChildren = async () => {
+                let columnsDiv = document.createElement('div');
+                let columnsCount = Math.min(this.columns, maxColumns);
+                for (let i = 0; i < columnsCount; i++) {
+                    $.append(columnsDiv, $.html(this.html.column, {
+                        id: i+1
+                    }));
+                }
+                $.setContent(this.element, columnsDiv);
+                this.core.updateContent();
             };
 
         }

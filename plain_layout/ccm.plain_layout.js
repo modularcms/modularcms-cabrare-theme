@@ -22,8 +22,12 @@
                 await this.update();
             };
 
-            this.update = async () => {
-                this.core.initContent(this.html.main);
+            this.update = (key, value) => {
+                this[key] = value;
+            };
+
+            this.updateChildren = async () => {
+                this.core.updateContent();
             };
         }
 
