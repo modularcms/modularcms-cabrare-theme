@@ -48,7 +48,7 @@
                     }));
                 }
 
-                this.element.setAttribute('data-columns-count', columnsCount);
+                this.element.querySelector('.row').setAttribute('data-columns-count', columnsCount);
 
                 await this.core.initContent(this.html.main, {}, {
                     'columns-container': columnsDiv
