@@ -19,7 +19,7 @@
 
         Instance: function () {
             this.start = async () => {
-                await this.update();
+                this.core.initContent(this.html.main);
             };
 
             this.update = (key, value) => {
