@@ -10,6 +10,8 @@
 
         name: 'row_with_columns_block',
 
+        version: [1,0,0],
+
         ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.min.js',
 
         config: {
@@ -50,7 +52,6 @@
                 this.core.initContent(this.html.main, {columnsCount: columnsCount}, {
                     'columns-container': columnsDiv
                 });
-                await this.updateChildren();
             };
 
             this.update = (key, value) => {
