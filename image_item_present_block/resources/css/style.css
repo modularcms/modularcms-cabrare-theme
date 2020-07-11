@@ -19,7 +19,7 @@
 
 #image-present {
     flex-shrink: 0;
-    padding: 25px;
+    padding: 0px 25px;
     position: relative;
     width: 33%;
     flex-grow: 0;
@@ -39,6 +39,14 @@
     flex-direction: column-reverse;
 }
 
+#element.LG .row:not(.mirror) #image-present {
+    padding-right: 30px;
+}
+#element.LG .row.mirror #image-present {
+    padding-left: 30px;
+}
+
 #element:not(.LG) #image-present {
     max-height: 300px;
+    padding: 25px;
 }
