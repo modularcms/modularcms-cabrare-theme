@@ -16,7 +16,7 @@
 
         config: {
             "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/plain_layout/resources/html/template.html" ],
-            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ]
+            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ]
         },
 
         Instance: function () {
