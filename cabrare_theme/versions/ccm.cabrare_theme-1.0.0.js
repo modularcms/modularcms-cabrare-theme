@@ -58,7 +58,7 @@
                             logoTitle: this.logoTitle
                         }) : null
                     });
-                    _menu = await this.menu.start(Object.assign(config, 'menu-wrapper'));
+                    _menu = await this.menu.start(Object.assign(config, {root: this.element.querySelector('#menu-wrapper')}));
                 } else {
                     Object.assign(_menu, config);
                     _menu.updateChildren();
