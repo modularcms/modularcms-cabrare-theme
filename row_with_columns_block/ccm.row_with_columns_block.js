@@ -50,6 +50,7 @@
                 this.core.initContent(this.html.main, {columnsCount: columnsCount}, {
                     'columns-container': columnsDiv
                 });
+                await this.updateChildren();
             };
 
             this.update = (key, value) => {

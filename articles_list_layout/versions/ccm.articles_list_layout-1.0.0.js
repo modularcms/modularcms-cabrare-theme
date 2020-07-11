@@ -33,11 +33,12 @@
             };
 
             this.start = async () => {
+                this.core.initContent(this.html.main);
                 await this.updateChildren();
             };
 
-            this.update = async () => {
-                this.core.initContent(this.html.main);
+            this.updateChildren = async () => {
+                this.core.updateContent();
             };
 
         }
