@@ -41,6 +41,10 @@
                 await this.updateChildren();
             };
 
+            this.update = (key, value) => {
+                this[key] = value;
+            }
+
             this.updateChildren = async () => {
                 this.menu.websiteKey = this.websiteKey;
                 this.menu.page = this.page;
