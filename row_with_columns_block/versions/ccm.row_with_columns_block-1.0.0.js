@@ -43,7 +43,7 @@
                         id: i+1
                     }));
                 }
-                return columnsDiv
+                return columnsDiv;
             }
 
             this.start = async () => {
@@ -66,7 +66,7 @@
                         id: i+1
                     }));
                 }
-                $.setContent(this.element, columnsDiv);
+                $.setContent(this.element.querySelector('#columns-container'), columnsDiv);
                 this.core.updateContent();
             };
 
