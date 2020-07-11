@@ -48,9 +48,11 @@
                     if (hamburger.classList.contains('active')) {
                         menu.classList.remove('active');
                         hamburger.classList.remove('active');
+                        hamburger.parentElement.classList.remove('active');
                     } else {
                         menu.classList.add('active');
                         hamburger.classList.add('active');
+                        hamburger.parentElement.classList.add('active');
                     }
                 };
 

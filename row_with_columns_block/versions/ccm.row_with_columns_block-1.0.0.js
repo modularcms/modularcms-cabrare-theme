@@ -39,9 +39,13 @@
                 let columnsDiv = document.createElement('div');
                 let columnsCount = Math.min(this.columns, maxColumns);
                 for (let i = 0; i < columnsCount; i++) {
-                    $.append(columnsDiv, $.html(this.html.column, {
+                    let column = $.html(this.html.column, {
                         id: i+1
-                    }));
+                    });
+                    $.append(columnsDiv, column);
+                    if (this['column' + (i+1) + '_text_align'] !== undefined && this['column' + (i+1) + '_text_align'] != 'unset') {
+                        column.style.textAlign = this['column' + (i+1) + '_text_align'];
+                    }
                 }
                 return columnsDiv;
             }
@@ -59,13 +63,7 @@
             };
 
             this.updateChildren = async () => {
-                let columnsDiv = document.createElement('div');
-                let columnsCount = Math.min(this.columns, maxColumns);
-                for (let i = 0; i < columnsCount; i++) {
-                    $.append(columnsDiv, $.html(this.html.column, {
-                        id: i+1
-                    }));
-                }
+                let columnsDiv = this.getColumnsDiv();
                 $.setContent(this.element.querySelector('#columns-container'), columnsDiv);
                 this.core.updateContent();
             };

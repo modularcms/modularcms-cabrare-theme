@@ -29,6 +29,10 @@ ul li.active a:link, ul li.active a:hover, ul li.active a:visited {
     height: 100%;
 }
 
+#hamburger-wrapper:not(.active) {
+    display: none;
+}
+
 #hamburger-button {
     display: none;
     position: absolute;
