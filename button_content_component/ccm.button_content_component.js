@@ -23,7 +23,8 @@
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
             "data": {
                 "url": "/",
-                "style": "normal"
+                "style": "normal",
+                "text": "Button-Text"
             }
         },
 
