@@ -36,7 +36,7 @@
             };
 
             this.start = async () => {
-                this.core.initContent(this.html.main, {imageSrc: columnsCount});
+                this.core.initContent(this.html.main, {imageSrc: this.data.imageSrc});
             };
 
             this.update = (key, value) => {
