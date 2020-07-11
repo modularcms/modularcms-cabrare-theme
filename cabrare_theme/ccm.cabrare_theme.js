@@ -21,7 +21,7 @@
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.js" ],
-            "menu": [ "ccm.instance", "https://modularcms.github.io/modularcms-cabrare-theme/menu/versions/ccm.menu-1.0.0.js" ],
+            "menu": [ "ccm.component", "https://modularcms.github.io/modularcms-cabrare-theme/menu/versions/ccm.menu-1.0.0.js" ],
             "logo": "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/img/default-logo.svg",
             "logoTitle": "Cabrare theme by modularcms"
         },
@@ -29,7 +29,7 @@
         Instance: function () {
             let $;
 
-            let _menuInitiated = false;
+            let _menu = false;
 
             this.ready = async () => {
                 $ = Object.assign( {}, this.ccm.helper, this.helper );                 // set shortcut to help functions
@@ -44,22 +44,22 @@
             };
 
             this.updateChildren = async () => {
-                this.menu.websiteKey = this.websiteKey;
-                this.menu.page = this.page;
-                this.menu.edit = this.edit;
-
-                if (!_menuInitiated) {
-                    _menuInitiated = true;
-                    this.menu.start();
+                let config = {
+                    websiteKey: this.websiteKey,
+                    page: this.page,
+                    edit: this.edit
+                }
+                if (!_menu) {
                     this.core.initContent(this.html.main, {}, {
                         'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
                             logoSrc: this.logo,
                             logoTitle: this.logoTitle
-                        }) : null,
-                        'menu-wrapper': this.menu.root
+                        }) : null
                     });
+                    _menu = await this.menu.start(Object.assign(config, 'menu-wrapper'));
                 } else {
-                    this.menu.updateChildren();
+                    Object.assign(_menu, config);
+                    _menu.updateChildren();
                 }
             };
         }
