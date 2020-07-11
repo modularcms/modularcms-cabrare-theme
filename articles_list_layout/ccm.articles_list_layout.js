@@ -32,7 +32,10 @@
 
             this.start = async () => {
                 this.core.initContent(this.html.main);
-                await this.updateChildren();
+            };
+
+            this.update = (key, value) => {
+                this[key] = value;
             };
 
             this.updateChildren = async () => {

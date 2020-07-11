@@ -44,7 +44,6 @@
                         logoTitle: this.logoTitle
                     }) : null
                 });
-                await this.updateChildren();
             };
 
             this.update = (key, value) => {
