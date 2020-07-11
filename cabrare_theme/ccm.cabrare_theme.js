@@ -10,6 +10,8 @@
 
         name: 'cabrare_theme',
 
+        version: [1,0,0],
+
         ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.js',
 
         config: {
@@ -36,10 +38,10 @@
             };
 
             this.start = async () => {
-                await this.update();
+                await this.updateChildren();
             };
 
-            this.update = async () => {
+            this.updateChildren = async () => {
                 this.menu.websiteKey = this.websiteKey;
                 this.menu.page = this.page;
                 this.menu.edit = this.edit;
