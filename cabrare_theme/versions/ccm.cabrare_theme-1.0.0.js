@@ -44,26 +44,26 @@
                         logoTitle: this.logoTitle
                     }) : null
                 });
+                _menu = await this.menu.start(Object.assign(this.getMenuConfig(), {root: this.element.querySelector('#menu-wrapper')}));
             };
 
             this.update = (key, value) => {
                 this[key] = value;
             };
 
-            this.updateChildren = async () => {
-                let config = {
+            this.getMenuConfig = () => {
+                return {
                     websiteKey: this.websiteKey,
                     page: this.page,
                     edit: this.edit
-                }
-                if (_menu == false) {
-                    _menu = await this.menu.start(Object.assign(config, {root: this.element.querySelector('#menu-wrapper')}));
-                } else {
-                    this.core.updateContent();
+                };
+            };
 
-                    Object.assign(_menu, config);
-                    _menu.updateChildren();
-                }
+            this.updateChildren = async () => {
+                this.core.updateContent();
+
+                Object.assign(_menu, this.getMenuConfig());
+                _menu.updateChildren();
             };
         }
 
