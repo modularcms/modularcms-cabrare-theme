@@ -16,10 +16,10 @@
 
         config: {
             "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
-            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/row_with_columns_block/resources/html/template.html" ],
+            "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/button_content_component/resources/html/template.html" ],
             "css": ["ccm.load",
                 "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/css/global.css",
-                "https://modularcms.github.io/modularcms-cabrare-theme/row_with_columns_block/resources/css/style.css"
+                "https://modularcms.github.io/modularcms-cabrare-theme/button_content_component/resources/css/style.css"
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
