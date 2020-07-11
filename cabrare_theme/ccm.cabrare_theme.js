@@ -46,7 +46,7 @@
 
                 if (!_menuInitiated) {
                     _menuInitiated = true;
-                    await this.menu.start();
+                    this.menu.start();
                     await this.core.initContent(this.html.main, {}, {
                         'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
                             logoSrc: this.logo,
