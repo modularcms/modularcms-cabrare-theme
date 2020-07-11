@@ -37,7 +37,7 @@
             };
 
             this.update = async () => {
-                await this.core.initContent(this.html.main);
+                this.core.initContent(this.html.main);
             };
 
         }

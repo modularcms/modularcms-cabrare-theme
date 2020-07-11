@@ -47,7 +47,7 @@
                 if (!_menuInitiated) {
                     _menuInitiated = true;
                     this.menu.start();
-                    await this.core.initContent(this.html.main, {}, {
+                    this.core.initContent(this.html.main, {}, {
                         'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
                             logoSrc: this.logo,
                             logoTitle: this.logoTitle
@@ -55,7 +55,7 @@
                         'menu-wrapper': this.menu.root
                     });
                 } else {
-                    await this.menu.update();
+                    this.menu.update();
                 }
             };
         }

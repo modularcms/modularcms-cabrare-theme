@@ -46,7 +46,7 @@
                     }));
                 }
 
-                await this.core.initContent(this.html.main, {columnsCount: columnsCount}, {
+                this.core.initContent(this.html.main, {columnsCount: columnsCount}, {
                     'columns-container': columnsDiv
                 });
             };
