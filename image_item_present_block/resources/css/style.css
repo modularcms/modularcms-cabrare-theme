@@ -1,39 +1,40 @@
-.row > div {
+.row {
     display: flex;
+}
+
+.row.mirror {
+    flex-direction: row-reverse;
 }
 
 .column {
     flex-grow: 1;
 }
 
-#element.LG .row > div .column:nth-child(n+2) {
-    margin-left: 20px;
+.content-zone {
+    width: 100%;
 }
 
-#element:not(.LG) .row > div {
+#image-present {
+    flex-shrink: 0;
+    padding: 25px;
+    position: relative;
+    width: 33%
+}
+
+#image-present img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#element:not(.LG) .row {
     flex-direction: column;
 }
 
-#element:not(.LG) .column {
-    width: 100%
+#element:not(.LG).row.mirror {
+    flex-direction: column-reverse;
 }
 
-.row[data-columns-count="2"] .column {
-    width: 50%;
-}
-
-.row[data-columns-count="2"]:has(.two-thirds) .column {
-    width: calc(100% / 3);
-}
-
-.row[data-columns-count="2"]:has(.two-thirds) .column.two-thirds {
-    width: calc(200% / 3);
-}
-
-.row[data-columns-count="3"] .column {
-    width: calc(100% / 3);
-}
-
-.row[data-columns-count="4"] .column {
-    width: 25%;
+#element:not(.LG) #image-present {
+    max-height: 300px;
 }
