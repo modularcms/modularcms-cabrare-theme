@@ -38,6 +38,12 @@
             };
 
             this.start = async () => {
+                this.core.initContent(this.html.main, {}, {
+                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
+                        logoSrc: this.logo,
+                        logoTitle: this.logoTitle
+                    }) : null
+                });
                 await this.updateChildren();
             };
 
@@ -52,14 +58,10 @@
                     edit: this.edit
                 }
                 if (_menu == false) {
-                    this.core.initContent(this.html.main, {}, {
-                        'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
-                            logoSrc: this.logo,
-                            logoTitle: this.logoTitle
-                        }) : null
-                    });
                     _menu = await this.menu.start(Object.assign(config, {root: this.element.querySelector('#menu-wrapper')}));
                 } else {
+                    this.core.updateContent();
+
                     Object.assign(_menu, config);
                     _menu.updateChildren();
                 }
