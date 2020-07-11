@@ -41,7 +41,7 @@
 
             this.update = (key, value) => {
                 this[key] = value;
-            }
+            };
 
             this.updateChildren = async () => {
                 this.menu.websiteKey = this.websiteKey;
@@ -59,7 +59,7 @@
                         'menu-wrapper': this.menu.root
                     });
                 } else {
-                    this.menu.update();
+                    this.menu.updateChildren();
                 }
             };
         }
