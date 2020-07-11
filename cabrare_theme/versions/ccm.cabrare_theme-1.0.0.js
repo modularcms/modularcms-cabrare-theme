@@ -12,7 +12,7 @@
 
         version: [1,0,0],
 
-        ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.js',
+        ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.min.js',
 
         config: {
             "helper": [ "ccm.load", "https://ccmjs.github.io/akless-components/modules/versions/helper-5.1.0.mjs" ],
@@ -51,7 +51,7 @@
                     page: this.page,
                     edit: this.edit
                 }
-                if (!_menu) {
+                if (_menu == false) {
                     this.core.initContent(this.html.main, {}, {
                         'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
                             logoSrc: this.logo,

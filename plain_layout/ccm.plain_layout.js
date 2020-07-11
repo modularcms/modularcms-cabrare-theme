@@ -10,7 +10,7 @@
 
         name: 'plain_layout',
 
-        ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.js',
+        ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.min.js',
 
         config: {
             "html": [ "ccm.load", "https://modularcms.github.io/modularcms-cabrare-theme/plain_layout/resources/html/template.html" ],
