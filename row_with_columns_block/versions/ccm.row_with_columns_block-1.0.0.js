@@ -23,7 +23,9 @@
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
-            "columns": 1
+            "data": {
+                "columns": 1
+            }
         },
 
         Instance: function () {
@@ -37,15 +39,12 @@
 
             this.getColumnsDiv = () => {
                 let columnsDiv = document.createElement('div');
-                let columnsCount = Math.min(this.columns, maxColumns);
+                let columnsCount = Math.min(this.data.columns, maxColumns);
                 for (let i = 0; i < columnsCount; i++) {
                     let column = $.html(this.html.column, {
                         id: i+1
                     });
                     $.append(columnsDiv, column);
-                    if (this['column' + (i+1) + '_text_align'] !== undefined && this['column' + (i+1) + '_text_align'] != 'unset') {
-                        column.style.textAlign = this['column' + (i+1) + '_text_align'];
-                    }
                 }
                 return columnsDiv;
             }
