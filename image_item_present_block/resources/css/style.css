@@ -1,24 +1,26 @@
 .row {
     display: flex;
+    position: relative;
 }
 
 .row.mirror {
     flex-direction: row-reverse;
 }
 
-.column {
-    flex-grow: 1;
-}
-
 .content-zone {
     width: 100%;
+}
+
+.column {
+    flex-grow: 1;
 }
 
 #image-present {
     flex-shrink: 0;
     padding: 25px;
     position: relative;
-    width: 33%
+    width: 33%;
+    flex-grow: 0;
 }
 
 #image-present img {
