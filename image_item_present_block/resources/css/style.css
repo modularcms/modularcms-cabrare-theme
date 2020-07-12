@@ -50,4 +50,5 @@
 #element:not(.LG) #image-present {
     max-height: 300px;
     padding: 25px;
+    width: 100%;
 }
