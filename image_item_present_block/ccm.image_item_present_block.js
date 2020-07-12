@@ -35,6 +35,7 @@
 
             this.start = async () => {
                 this.core.initContent(this.html.main, {imageSrc: this.data.imageSrc});
+                this.addMirrorHandling();
             };
 
             this.update = (key, value) => {
@@ -43,14 +44,18 @@
 
             this.updateChildren = async () => {
                 this.element.querySelector('#image').src = this.data.imageSrc;
+                this.addMirrorHandling();
+                this.core.updateContent();
+            };
+
+            this.addMirrorHandling = () => {
                 const row = this.element.querySelector('.row');
                 if (this.data.mirror !== undefined && this.data.mirror === true) {
                     row.classList.add('mirror');
                 } else {
                     row.classList.remove('mirror');
                 }
-                this.core.updateContent();
-            };
+            }
 
         }
 
