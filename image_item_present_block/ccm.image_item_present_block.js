@@ -43,6 +43,12 @@
 
             this.updateChildren = async () => {
                 this.element.querySelector('#image').src = this.data.imageSrc;
+                const row = this.element.querySelector('.row');
+                if (this.data.mirror !== undefined && this.data.mirror === true) {
+                    row.classList.add('mirror');
+                } else {
+                    row.classList.remove('mirror');
+                }
                 this.core.updateContent();
             };
 
