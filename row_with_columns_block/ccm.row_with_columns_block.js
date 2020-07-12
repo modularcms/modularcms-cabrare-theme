@@ -21,9 +21,7 @@
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
-            "data": {
-                "columns": 1
-            }
+            "columns": 1
         },
 
         Instance: function () {
@@ -37,7 +35,7 @@
 
             this.getColumnsDiv = () => {
                 let columnsDiv = document.createElement('div');
-                let columnsCount = Math.min(this.data.columns, maxColumns);
+                let columnsCount = Math.min(this.columns, maxColumns);
                 for (let i = 0; i < columnsCount; i++) {
                     let column = $.html(this.html.column, {
                         id: i+1

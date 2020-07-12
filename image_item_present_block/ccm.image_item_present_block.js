@@ -21,9 +21,7 @@
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
-            "data": {
-                "imageSrc": "https://res.cloudinary.com/dyhjqgkca/image/upload/v1594499974/cms/a8xtbzcxelldugfz82i5.svg"
-            }
+            "imageSrc": "https://res.cloudinary.com/dyhjqgkca/image/upload/v1594499974/cms/a8xtbzcxelldugfz82i5.svg"
         },
 
         Instance: function () {
@@ -34,7 +32,7 @@
             };
 
             this.start = async () => {
-                this.core.initContent(this.html.main, {imageSrc: this.data.imageSrc});
+                this.core.initContent(this.html.main, {imageSrc: this.imageSrc});
                 this.addMirrorHandling();
             };
 
@@ -43,7 +41,7 @@
             };
 
             this.updateChildren = async () => {
-                this.element.querySelector('#image').src = this.data.imageSrc;
+                this.element.querySelector('#image').src = this.imageSrc;
                 this.addMirrorHandling();
                 this.core.updateContent();
             };
