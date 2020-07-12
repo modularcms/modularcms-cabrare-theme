@@ -3,6 +3,7 @@
     padding: 15px;
     border-radius: 5px;
     color: var(--color-light);
+    display: inline-block;
 }
 
 #button:hover {
