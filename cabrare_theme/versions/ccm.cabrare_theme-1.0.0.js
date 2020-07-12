@@ -29,8 +29,8 @@
             "logoTitle": "Cabrare theme by modularcms",
             "colorPrimary": "#44af9b",
             "colorSecondary": "#1592e6",
-            "colorLight": "#fff",
-            "colorFooter": "#eee"
+            "colorLight": "#ffffff",
+            "colorFooter": "#eeeeee"
         },
 
         Instance: function () {
