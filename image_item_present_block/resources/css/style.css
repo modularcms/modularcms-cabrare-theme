@@ -19,7 +19,7 @@
 
 #image-present {
     flex-shrink: 0;
-    padding: 0px 25px;
+    padding: 25px 0px;
     position: relative;
     width: 33%;
     flex-grow: 0;
