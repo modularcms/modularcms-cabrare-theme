@@ -30,7 +30,7 @@
     height: 100%;
     object-fit: contain;
     object-position: left;
-    max-height: 2500px;
+    max-height: 250px;
 }
 
 #element:not(.LG) .row {
