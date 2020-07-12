@@ -37,10 +37,6 @@
     flex-direction: column;
 }
 
-#element:not(.LG).row.mirror {
-    flex-direction: column-reverse;
-}
-
 #element.LG .row:not(.mirror) #image-present {
     padding-right: 30px;
 }
