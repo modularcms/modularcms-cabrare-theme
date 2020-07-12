@@ -25,7 +25,7 @@
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
             "url": "/",
             "style": "normal",
-            "text": "Button-Text"
+            "text": "Button text"
         },
 
         Instance: function () {
