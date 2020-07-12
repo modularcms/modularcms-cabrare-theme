@@ -43,7 +43,6 @@
 
             this.updateChildren = async () => {
                 this.element.querySelector('#image').src = this.data.imageSrc;
-                $.setContent(this.element.querySelector('#columns-container'), columnsDiv);
                 this.core.updateContent();
             };
 
