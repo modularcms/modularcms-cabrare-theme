@@ -44,7 +44,9 @@
             };
 
             this.updateChildren = async () => {
-                $.setContent(this.element, $.html(this.html.main, {url: this.url, style: this.style, text: this.text, align: this.align}));
+                $.setContent(this.element, $.html(this.html.main, {url: this.url, text: this.text}));
+                this.element.setAttribute('data-style', this.style);
+                this.element.setAttribute('data-align', this.align);
             };
 
         }

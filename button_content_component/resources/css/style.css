@@ -17,20 +17,20 @@
     opacity: 0.55;
 }
 
-#element:has(#button[data-style="outline"]) {
+#element[data-style="outline"] {
     border: 2px solid var(--color-primary);
     background-color: transparent;
     color: var(--color-primary);
 }
 
-#element:has(#button[data-align="left"]) {
+#element[data-align="left"] {
     text-align: left;
 }
 
-#element:has(#button[data-align="center"]) {
+#element[data-align="center"] {
     text-align: center;
 }
 
-#element:has(#button[data-align="right"]) {
+#element[data-align="right"] {
     text-align: right;
 }
