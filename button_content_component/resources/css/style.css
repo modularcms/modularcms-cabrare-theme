@@ -6,6 +6,7 @@
     display: inline-block;
     transition: opacity .3s ease-in-out;
     text-decoration: none;
+    border: 2px solid var(--color-primary);
 }
 
 #button:hover {
@@ -14,4 +15,22 @@
 
 #button:active {
     opacity: 0.55;
+}
+
+#element:has(#button[data-style="outline"]) {
+    border: 2px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+#element:has(#button[data-align="left"]) {
+    text-align: left;
+}
+
+#element:has(#button[data-align="center"]) {
+    text-align: center;
+}
+
+#element:has(#button[data-align="right"]) {
+    text-align: right;
 }
