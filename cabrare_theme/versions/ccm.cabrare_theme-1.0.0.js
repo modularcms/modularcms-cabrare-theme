@@ -24,8 +24,13 @@
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
             "menu": [ "ccm.component", "https://modularcms.github.io/modularcms-cabrare-theme/menu/versions/ccm.menu-1.0.0.js" ],
+            "showLogo": true,
             "logo": "https://modularcms.github.io/modularcms-cabrare-theme/cabrare_theme/resources/img/default-logo.svg",
-            "logoTitle": "Cabrare theme by modularcms"
+            "logoTitle": "Cabrare theme by modularcms",
+            "colorPrimary": "#44af9b",
+            "colorSecondary": "#1592e6",
+            "colorLight": "#fff",
+            "colorFooter": "#eee"
         },
 
         Instance: function () {
@@ -38,8 +43,13 @@
             };
 
             this.start = async () => {
-                this.core.initContent(this.html.main, {}, {
-                    'logo-wrapper': this.logo != null ? $.html(this.html.logo, {
+                this.core.initContent(this.html.main, {
+                    colorPrimary: this.colorPrimary,
+                    colorSecondary: this.colorSecondary,
+                    colorLight: this.colorLight,
+                    colorFooter: this.colorFooter
+                }, {
+                    'logo-wrapper': (this.showLogo === true && this.logo != null) ? $.html(this.html.logo, {
                         logoSrc: this.logo,
                         logoTitle: this.logoTitle
                     }) : null
