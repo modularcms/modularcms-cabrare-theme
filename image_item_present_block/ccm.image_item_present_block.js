@@ -48,7 +48,7 @@
 
             this.addMirrorHandling = () => {
                 const row = this.element.querySelector('.row');
-                if (this.data.mirror !== undefined && this.data.mirror === true) {
+                if (this.mirror === true) {
                     row.classList.add('mirror');
                 } else {
                     row.classList.remove('mirror');
