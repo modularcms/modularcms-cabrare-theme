@@ -46,7 +46,7 @@
             };
 
             this.updateChildren = async () => {
-                $.setContent(this.element, $.html(this.html.main, {url: url, style: style, text: text}));
+                $.setContent(this.element, $.html(this.html.main, {url: this.url, style: this.style, text: this.text}));
             };
 
         }
