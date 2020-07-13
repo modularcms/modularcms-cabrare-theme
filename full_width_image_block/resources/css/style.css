@@ -1,12 +1,14 @@
 #element {
     position: relative;
     min-height: 350px;
-    display: flex;
-    align-items: center;
 }
 
 #element.full-height {
     min-height: 100%;
+}
+
+element > div {
+    width: 100%;
 }
 
 #image {
