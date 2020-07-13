@@ -37,7 +37,7 @@
 
             this.start = async () => {
                 this.core.initContent(this.html.main, {imageSrc: this.imageSrc});
-                this.addMirrorHandling();
+                this.addFullHeightHandling();
             };
 
             this.update = (key, value) => {
@@ -52,11 +52,10 @@
             };
 
             this.addFullHeightHandling = () => {
-                const row = this.element.querySelector('.row');
-                if (this.mirror === true) {
-                    row.classList.add('mirror');
+                if (this.fullHeight === true) {
+                    this.element.classList.add('full-height');
                 } else {
-                    row.classList.remove('mirror');
+                    this.element.classList.remove('full-height');
                 }
             }
 
