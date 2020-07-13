@@ -19,6 +19,7 @@ element > div {
     object-fit: cover;
     object-position: center;
     display: block;
+    top: 0;
 }
 
 .row {
