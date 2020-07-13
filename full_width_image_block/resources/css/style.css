@@ -1,6 +1,8 @@
 #element {
     position: relative;
     min-height: 350px;
+    display: flex;
+    align-items: center;
 }
 
 #element.full-height {
@@ -27,14 +29,22 @@ element > div {
     margin: 50px auto;
 }
 
-#element[data-align="left"] #full-width-block {
+.column {
+    width: 100%;
+}
+
+#element[data-align="left"] .column {
     text-align: left;
 }
 
-#element[data-align="center"] #full-width-block {
+#element[data-align="center"] .column {
     text-align: center;
 }
 
-#element[data-align="right"] #full-width-block {
+#element[data-align="right"] .column {
     text-align: right;
+}
+
+#element.light-color {
+    color: var(--color-light);
 }
