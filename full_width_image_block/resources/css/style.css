@@ -27,6 +27,7 @@ element > div {
 .row {
     z-index: 1006;
     margin: 50px auto;
+    position: relative;
 }
 
 .column {
