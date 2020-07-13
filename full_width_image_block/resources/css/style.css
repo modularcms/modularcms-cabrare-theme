@@ -1,0 +1,40 @@
+#element {
+    position: relative;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+}
+
+#element.full-height {
+    min-height: 100%;
+}
+
+#img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1005;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.row {
+    z-index: 1006;
+}
+
+#full-width-block {
+    margin: 50px 0px;
+}
+
+#element[data-align="left"] #full-width-block {
+    text-align: left;
+}
+
+#element[data-align="center"] #full-width-block {
+    text-align: center;
+}
+
+#element[data-align="right"] #full-width-block {
+    text-align: right;
+}
