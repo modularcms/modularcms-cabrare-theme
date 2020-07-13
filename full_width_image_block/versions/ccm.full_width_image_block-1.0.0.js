@@ -25,7 +25,8 @@
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
             "imageSrc": "https://res.cloudinary.com/dyhjqgkca/image/upload/v1594609440/cms/ag6mzd8oejnreokyon20.jpg",
             "align": "center",
-            "fullHeight": false
+            "fullHeight": false,
+            "lightColor": true
         },
 
         Instance: function () {
@@ -38,6 +39,7 @@
             this.start = async () => {
                 this.core.initContent(this.html.main, {imageSrc: this.imageSrc});
                 this.addFullHeightHandling();
+                this.addLightColorHandling();
             };
 
             this.update = (key, value) => {
@@ -47,6 +49,7 @@
             this.updateChildren = async () => {
                 this.element.querySelector('#image').src = this.imageSrc;
                 this.addFullHeightHandling();
+                this.addLightColorHandling();
                 this.element.setAttribute('data-align', this.align);
                 this.core.updateContent();
             };
@@ -56,6 +59,14 @@
                     this.element.classList.add('full-height');
                 } else {
                     this.element.classList.remove('full-height');
+                }
+            }
+
+            this.addLightColorHandling = () => {
+                if (this.lightColor === true) {
+                    this.element.classList.add('light-color');
+                } else {
+                    this.element.classList.remove('light-color');
                 }
             }
 
