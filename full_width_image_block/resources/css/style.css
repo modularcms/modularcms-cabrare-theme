@@ -49,3 +49,7 @@
 #element.light-color {
     color: var(--color-light);
 }
+
+#element.light-color h1, #element.light-color h2, #element.light-color h3, #element.light-color p {
+    text-shadow: 0px 0px 5px #000;
+}
