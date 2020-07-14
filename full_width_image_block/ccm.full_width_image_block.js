@@ -36,8 +36,7 @@
 
             this.start = async () => {
                 this.core.initContent(this.html.main, {imageSrc: this.imageSrc});
-                this.addFullHeightHandling();
-                this.addLightColorHandling();
+                this.setStyle()
             };
 
             this.update = (key, value) => {
@@ -45,12 +44,16 @@
             };
 
             this.updateChildren = async () => {
+                this.setStyle();
+                this.core.updateContent();
+            };
+
+            this.setStyle = () => {
                 this.element.querySelector('#image').src = this.imageSrc;
                 this.addFullHeightHandling();
                 this.addLightColorHandling();
                 this.element.setAttribute('data-align', this.align);
-                this.core.updateContent();
-            };
+            }
 
             this.addFullHeightHandling = () => {
                 if (this.fullHeight === true) {

@@ -9,7 +9,7 @@
     min-height: calc(100vh - 75px);
 }
 
-element > div {
+#element > div {
     width: 100%;
 }
 
