@@ -21,7 +21,7 @@
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
-            "imageSrc": "https://res.cloudinary.com/dyhjqgkca/image/upload/v1594609440/cms/ag6mzd8oejnreokyon20.jpg",
+            "imageSrc": "https://res.cloudinary.com/dyhjqgkca/image/upload/q_auto,w_auto/c_limit,w_2048/v1594609440/cms/ag6mzd8oejnreokyon20.jpg",
             "align": "center",
             "fullHeight": false,
             "lightColor": true
