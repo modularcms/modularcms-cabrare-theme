@@ -35,8 +35,8 @@
             };
 
             this.start = async () => {
-                $.setContent(list, $.loading());
                 this.core.initContent(this.html.main);
+                this.showArticles();
             };
 
             this.update = (key, value) => {
@@ -44,11 +44,12 @@
             };
 
             this.updateChildren = async () => {
-                $.setContent(list, $.loading());
                 this.core.updateContent();
+                this.showArticles();
             };
 
             this.showArticles = async () => {
+                $.setContent(list, $.loading());
                 let pageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
                 if (pageUrl == '/') {
                     pageUrl = '';

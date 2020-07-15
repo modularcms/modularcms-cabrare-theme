@@ -10,6 +10,8 @@
 
         name: 'articles_list_layout',
 
+        version: [1,0,0],
+
         ccm: 'https://ccmjs.github.io/ccm/versions/ccm-25.5.3.min.js',
 
         config: {
@@ -33,8 +35,8 @@
             };
 
             this.start = async () => {
-                $.setContent(list, $.loading());
                 this.core.initContent(this.html.main);
+                this.showArticles();
             };
 
             this.update = (key, value) => {
@@ -42,11 +44,12 @@
             };
 
             this.updateChildren = async () => {
-                $.setContent(list, $.loading());
                 this.core.updateContent();
+                this.showArticles();
             };
 
             this.showArticles = async () => {
+                $.setContent(list, $.loading());
                 let pageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
                 if (pageUrl == '/') {
                     pageUrl = '';
