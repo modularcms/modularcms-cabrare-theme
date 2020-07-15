@@ -20,7 +20,9 @@
                 "https://modularcms.github.io/modularcms-cabrare-theme/articles_list_layout/resources/css/style.css"
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
-            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ]
+            "data_controller": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/data_controller/versions/ccm.data_controller-1.0.0.min.js" ],
+            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
+            "readNowText": "Read now"
         },
 
         Instance: function () {
@@ -31,6 +33,7 @@
             };
 
             this.start = async () => {
+                $.setContent(list, $.loading());
                 this.core.initContent(this.html.main);
             };
 
@@ -39,9 +42,33 @@
             };
 
             this.updateChildren = async () => {
+                $.setContent(list, $.loading());
                 this.core.updateContent();
             };
 
+            this.showArticles = async () => {
+                let pageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
+                if (pageUrl == '/') {
+                    pageUrl = '';
+                }
+                let list = this.element.querySelector('#page-children-list');
+                let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
+                for (let child of children) {
+                    let item = $.html(this.html.item, {
+                        url: pageUrl + child.urlPart,
+                        title: child.title,
+                        description: this.truncate(child.meta.description, 75),
+                        readNowText: this.readNowText
+                    });
+
+                }
+
+            };
+
+            // copied from https://stackoverflow.com/a/1199420
+            this.truncate = (str, n) =>{
+                return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+            };
         }
 
     };
