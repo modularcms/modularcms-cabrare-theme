@@ -23,7 +23,8 @@
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
-            "columns": 1
+            "columns": 1,
+            "align": "left"
         },
 
         Instance: function () {
@@ -53,6 +54,7 @@
                 this.core.initContent(this.html.main, {columnsCount: columnsCount}, {
                     'columns-container': columnsDiv
                 });
+                this.element.setAttribute('data-align', this.align);
             };
 
             this.update = (key, value) => {
@@ -62,6 +64,7 @@
             this.updateChildren = async () => {
                 let columnsDiv = this.getColumnsDiv();
                 $.setContent(this.element.querySelector('#columns-container'), columnsDiv);
+                this.element.setAttribute('data-align', this.align);
                 this.core.updateContent();
             };
 

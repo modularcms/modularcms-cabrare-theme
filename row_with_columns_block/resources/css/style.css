@@ -37,3 +37,15 @@
 .row[data-columns-count="4"] .column {
     width: 25%;
 }
+
+#element[data-align="left"] .column {
+    text-align: left;
+}
+
+#element[data-align="center"] .column {
+    text-align: center;
+}
+
+#element[data-align="right"] .column {
+    text-align: right;
+}
