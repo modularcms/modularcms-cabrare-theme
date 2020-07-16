@@ -55,6 +55,7 @@
                     pageUrl = '';
                 }
                 let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
+                children.sort((a,b) => b.createdAt - a.created_at);
                 if (children.length == 0) {
                     $.setContent(list, this.emptyText);
                 } else {
