@@ -13,8 +13,11 @@
     margin-right: 15px;
 }
 
-#read-next-articles {
+#read-next {
     margin-top: 50px;
+}
+
+#read-next-articles {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
