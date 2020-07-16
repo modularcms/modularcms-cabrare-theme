@@ -82,7 +82,8 @@
                                 let item = $.html(this.html.item, {
                                     url: pageUrl + child.urlPart,
                                     title: child.title,
-                                    description: this.truncate(child.meta.description, 75)
+                                    description: this.truncate(child.meta.description, 75),
+                                    readNowText: this.readNowText
                                 });
                                 $.append(list, item);
                             }
