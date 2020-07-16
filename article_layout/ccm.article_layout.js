@@ -54,7 +54,7 @@
             };
 
             this.updateChildren = async () => {
-                this.core.updateChildren();
+                this.core.updateContent();
                 if (this.showReadNext) {
                     this.showArticles();
                 }
