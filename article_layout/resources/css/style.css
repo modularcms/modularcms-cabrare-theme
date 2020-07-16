@@ -47,3 +47,11 @@
 #element.XL .article-item {
     width: calc(25% - 25px);
 }
+
+.article-item:hover {
+    opacity: 0.75;
+}
+
+.article-item:active {
+    opacity: 0.5;
+}

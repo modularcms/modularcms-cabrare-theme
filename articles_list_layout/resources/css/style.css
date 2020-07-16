@@ -21,3 +21,11 @@
 .article-item p {
     opacity: 0.8;
 }
+
+.article-item:hover {
+    opacity: 0.75;
+}
+
+.article-item:active {
+    opacity: 0.5;
+}
