@@ -71,7 +71,8 @@
                     if (pageUrl == '/') {
                         pageUrl = '';
                     }
-                    let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
+                    let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.parentKey);
+                    children.sort((a,b) => b.created_at - a.created_at);
                     if (children.length <= 1) {
                         $.setContent(list, this.emptyText);
                     } else {
