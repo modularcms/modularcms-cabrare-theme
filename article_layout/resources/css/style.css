@@ -13,7 +13,7 @@
     margin-right: 15px;
 }
 
-#read-next {
+#read-next-articles {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
