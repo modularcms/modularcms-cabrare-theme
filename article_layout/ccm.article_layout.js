@@ -72,7 +72,7 @@
                         pageUrl = '';
                     }
                     let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.parentKey);
-                    children.sort((a,b) => a.created_at - b.created_at);
+                    children.sort((a,b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
                     if (children.length <= 1) {
                         $.setContent(list, this.emptyText);
                     } else {
