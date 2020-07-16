@@ -26,6 +26,7 @@
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
     margin: 15px 0px;
+    transition: opacity .3s ease-in-out;
 }
 
 .article-item h2 {
