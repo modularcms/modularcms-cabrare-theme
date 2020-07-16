@@ -72,7 +72,7 @@
                         pageUrl = '';
                     }
                     let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
-                    if (children.length == 1) {
+                    if (children.length <= 1) {
                         $.setContent(list, this.emptyText);
                     } else {
                         list.innerHTML = '';
@@ -95,7 +95,7 @@
                 $.setContent(container, $.loading());
                 let user = await this.data_controller.getUserFromUsername(this.page._.creator);
                 $.setContent(container, $.html(this.html.authorContent, {
-                    created_at: (new Date(this.page.created_at)).toLocaleDateString(),
+                    creation_date: (new Date(this.page.created_at)).toLocaleDateString(),
                     creator: this.page._.creator,
                     profileImage: user.image != null ? user.image.thumbnailUrl : this.noProfileImage
                 }));
