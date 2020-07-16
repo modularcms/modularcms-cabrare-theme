@@ -65,10 +65,11 @@
 
             this.updateChildren = async () => {
                 _currentPageUrl = window.location.pathname;//await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
+                let pageUrlSplit = _currentPageUrl.split('/');
                 this.element.querySelector('#menu-item-container').innerHTML = '';
                 for (let item of _menuItems) {
                     let itemElement = $.html(this.html.menuItem, item);
-                    if (item.route == _currentPageUrl) { // TODO base url
+                    if (item.route.split('/')[1] == pageUrlSplit[1]) { // TODO base url
                         itemElement.classList.add('active');
                     }
                     $.append(this.element.querySelector('#menu-item-container'), itemElement);
