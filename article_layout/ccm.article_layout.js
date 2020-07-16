@@ -20,7 +20,9 @@
                 "https://modularcms.github.io/modularcms-cabrare-theme/article_layout/resources/css/style.css"
             ],
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
-            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ]
+            "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
+            "showReadNext": true,
+            "readNextText": "Read next",
         },
 
         Instance: function () {
@@ -31,7 +33,11 @@
             };
 
             this.start = async () => {
-                this.core.initContent(this.html.main);
+                this.core.initContent(this.html.main, {
+                    showReadNext: this.showReadNext,
+                    readNextText: this.readNextText
+                });
+                this.showArticles();
             };
 
             this.update = (key, value) => {
@@ -40,6 +46,32 @@
 
             this.updateChildren = async () => {
                 this.core.updateChildren();
+                this.showArticles();
+            };
+
+            this.showArticles = async () => {
+                if (this.page.parentKey) {
+                    let list = this.element.querySelector('#read-next-articles');
+                    $.setContent(list, $.loading());
+                    let pageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, his.page.parentKey);
+                    if (pageUrl == '/') {
+                        pageUrl = '';
+                    }
+                    let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
+                    for (let child of children) {
+                        let item = $.html(this.html.item, {
+                            url: pageUrl + child.urlPart,
+                            title: child.title,
+                            description: this.truncate(child.meta.description, 75)
+                        });
+                        $.append(list, item);
+                    }
+                }
+            };
+
+            // copied from https://stackoverflow.com/a/1199420
+            this.truncate = (str, n) =>{
+                return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
             };
 
         }

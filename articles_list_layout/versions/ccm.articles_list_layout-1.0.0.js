@@ -49,21 +49,21 @@
             };
 
             this.showArticles = async () => {
+                let list = this.element.querySelector('#page-children-list');
                 $.setContent(list, $.loading());
                 let pageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.pageKey);
                 if (pageUrl == '/') {
                     pageUrl = '';
                 }
-                let list = this.element.querySelector('#page-children-list');
                 let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
                 for (let child of children) {
                     let item = $.html(this.html.item, {
                         url: pageUrl + child.urlPart,
                         title: child.title,
-                        description: this.truncate(child.meta.description, 75),
+                        description: this.truncate(child.meta.description, 350),
                         readNowText: this.readNowText
                     });
-
+                    $.append(list, item);
                 }
 
             };
