@@ -23,6 +23,7 @@
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
             "showReadNext": true,
             "readNextText": "Read next",
+            "emptyText": "There are currently no articles to list here"
         },
 
         Instance: function () {
@@ -58,13 +59,18 @@
                         pageUrl = '';
                     }
                     let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
-                    for (let child of children) {
-                        let item = $.html(this.html.item, {
-                            url: pageUrl + child.urlPart,
-                            title: child.title,
-                            description: this.truncate(child.meta.description, 75)
-                        });
-                        $.append(list, item);
+                    if (children.length == 0) {
+                        $.setContent(list, this.emptyText);
+                    } else {
+                        list.innerHTML = '';
+                        for (let child of children) {
+                            let item = $.html(this.html.item, {
+                                url: pageUrl + child.urlPart,
+                                title: child.title,
+                                description: this.truncate(child.meta.description, 75)
+                            });
+                            $.append(list, item);
+                        }
                     }
                 }
             };

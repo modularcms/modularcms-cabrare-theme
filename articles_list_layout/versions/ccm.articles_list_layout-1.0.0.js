@@ -24,7 +24,8 @@
             "routing_sensor": ["ccm.instance", "https://modularcms.github.io/modularcms-components/routing_sensor/versions/ccm.routing_sensor-1.0.0.js"],
             "data_controller": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/data_controller/versions/ccm.data_controller-1.0.0.min.js" ],
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
-            "readNowText": "Read now"
+            "readNowText": "Read now",
+            "emptyText": "There are currently no articles to list here"
         },
 
         Instance: function () {
@@ -56,14 +57,19 @@
                     pageUrl = '';
                 }
                 let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
-                for (let child of children) {
-                    let item = $.html(this.html.item, {
-                        url: pageUrl + child.urlPart,
-                        title: child.title,
-                        description: this.truncate(child.meta.description, 350),
-                        readNowText: this.readNowText
-                    });
-                    $.append(list, item);
+                if (children.length == 0) {
+                    $.setContent(list, this.emptyText);
+                } else {
+                    list.innerHTML = '';
+                    for (let child of children) {
+                        let item = $.html(this.html.item, {
+                            url: pageUrl + child.urlPart,
+                            title: child.title,
+                            description: this.truncate(child.meta.description, 350),
+                            readNowText: this.readNowText
+                        });
+                        $.append(list, item);
+                    }
                 }
 
             };
