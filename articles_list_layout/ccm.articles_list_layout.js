@@ -63,7 +63,7 @@
                         let item = $.html(this.html.item, {
                             url: pageUrl + child.urlPart,
                             title: child.title,
-                            description: this.truncate(child.meta.description, 350),
+                            description: this.truncate(child.meta.description, 1000),
                             readNowText: this.readNowText
                         });
                         $.append(list, item);
