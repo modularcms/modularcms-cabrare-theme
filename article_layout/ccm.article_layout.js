@@ -23,7 +23,9 @@
             "core": [ "ccm.instance", "https://modularcms.github.io/modularcms-components/theme_component_core/versions/ccm.theme_component_core-1.0.0.min.js" ],
             "showReadNext": true,
             "readNextText": "Read next",
-            "emptyText": "There are currently no articles to list here"
+            "emptyText": "There are currently no articles to list here",
+            "showAuthorSection": true,
+            "noProfileImage": "https://modularcms.github.io/modularcms-components/cms/resources/img/no-user-image.svg"
         },
 
         Instance: function () {
@@ -38,7 +40,12 @@
                     showReadNext: this.showReadNext,
                     readNextText: this.readNextText
                 });
-                this.showArticles();
+                if (this.showReadNext) {
+                    this.showArticles();
+                }
+                if (this.showAuthorSection) {
+                    this.showAuthor();
+                }
             };
 
             this.update = (key, value) => {
@@ -47,33 +54,51 @@
 
             this.updateChildren = async () => {
                 this.core.updateChildren();
-                this.showArticles();
+                if (this.showReadNext) {
+                    this.showArticles();
+                }
+                if (this.showAuthorSection) {
+                    this.showAuthor();
+                }
             };
 
             this.showArticles = async () => {
                 if (this.page.parentKey) {
                     let list = this.element.querySelector('#read-next-articles');
                     $.setContent(list, $.loading());
-                    let pageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, his.page.parentKey);
+                    let pageUrl = await this.data_controller.getFullPageUrl(this.websiteKey, this.page.parentKey);
                     if (pageUrl == '/') {
                         pageUrl = '';
                     }
                     let children = await this.data_controller.getPageChildren(this.websiteKey, this.page.pageKey);
-                    if (children.length == 0) {
+                    if (children.length == 1) {
                         $.setContent(list, this.emptyText);
                     } else {
                         list.innerHTML = '';
                         for (let child of children) {
-                            let item = $.html(this.html.item, {
-                                url: pageUrl + child.urlPart,
-                                title: child.title,
-                                description: this.truncate(child.meta.description, 75)
-                            });
-                            $.append(list, item);
+                            if (child.pageKey != this.page.pageKey) {
+                                let item = $.html(this.html.item, {
+                                    url: pageUrl + child.urlPart,
+                                    title: child.title,
+                                    description: this.truncate(child.meta.description, 75)
+                                });
+                                $.append(list, item);
+                            }
                         }
                     }
                 }
             };
+
+            this.showAuthor = async () => {
+                let container = this.querySelector('#author');
+                $.setContent(container, $.loading());
+                let user = await this.data_controller.getUserFromUsername(this.page._.creator);
+                $.setContent(container, $.html(this.html.authorContent, {
+                    created_at: (new Date(this.page.created_at)).toLocaleDateString(),
+                    creator: this.page._.creator,
+                    profileImage: user.image != null ? user.image.thumbnailUrl : this.noProfileImage
+                }));
+            }
 
             // copied from https://stackoverflow.com/a/1199420
             this.truncate = (str, n) =>{

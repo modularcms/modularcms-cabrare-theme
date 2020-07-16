@@ -6,10 +6,7 @@
                 <h2>%readNextText%</h2>
                 <div id="read-next-articles"></div>
             </div>
-            <div id="author">
-                <img src="%profileImage%" />
-                <div>Published on %creation_date% by %creator%</div>
-            </div>
+            <div id="author"></div>
         </div>
     </div>
 </ccm-template>
@@ -19,4 +16,8 @@
         <p>%description%</p>
         <b>%readNowText%</b>
     </a>
+</ccm-template>
+<ccm-template key="authorContent">
+    <img src="%profileImage%" />
+    <div>Published on %creation_date% by %creator%</div>
 </ccm-template>
