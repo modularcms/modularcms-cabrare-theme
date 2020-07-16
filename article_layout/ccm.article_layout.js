@@ -90,7 +90,7 @@
             };
 
             this.showAuthor = async () => {
-                let container = this.querySelector('#author');
+                let container = this.element.querySelector('#author');
                 $.setContent(container, $.loading());
                 let user = await this.data_controller.getUserFromUsername(this.page._.creator);
                 $.setContent(container, $.html(this.html.authorContent, {
