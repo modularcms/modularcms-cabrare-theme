@@ -55,6 +55,11 @@
                         hamburger.parentElement.classList.add('active');
                     }
                 };
+                menu.addEventListener('click', () => {
+                    menu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.parentElement.classList.remove('active');
+                });
 
                 await this.updateChildren();
             };

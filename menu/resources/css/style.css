@@ -27,9 +27,6 @@ ul li.active a:link, ul li.active a:hover, ul li.active a:visited {
 #hamburger-wrapper {
     position: relative;
     height: 100%;
-}
-
-#hamburger-wrapper:not(.active) {
     display: none;
 }
 
@@ -84,6 +81,7 @@ ul li.active a:link, ul li.active a:hover, ul li.active a:visited {
 
 @media (max-width: 800px) {
     nav {
+        height: auto;
         max-height: 0vh;
         position: absolute;
         transition: max-height .3s linear;
@@ -129,7 +127,7 @@ ul li.active a:link, ul li.active a:hover, ul li.active a:visited {
         height: 100%;
     }
 
-    #hamburger-button {
+    #hamburger-wrapper, #hamburger-button {
         display: block;
     }
 }
